@@ -20,14 +20,12 @@ RUN set -ex && \
     && cp nzbget.conf webui/ \
     && cp -r scripts/ /client/ \
     && cp -r webui/ /client/ \
-    && cd .. \
-    && rm -rf nzb* \
     && cd /usr/lib/ \
     && cp libxml2.so.2 libstdc++.so.6 libgcc_s.so.1 /tmp/ \
     && apk del .fetch-deps \
     && cp /tmp/lib* /usr/lib/ \
-    && rm /tmp/lib* \
     && adduser -g '' -h /client -u 1000 -D -s /sbin/nologin nzbget \
+    && rm -Rf /tmp/* \
     && chown -R nzbget:nzbget /client 
 
 EXPOSE 6789
