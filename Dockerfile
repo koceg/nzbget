@@ -21,7 +21,7 @@ RUN set -ex && \
     && cp -r scripts/ /client/ \
     && cp -r webui/ /client/ \
     && cd .. \
-    && rm -r nzb* \
+    && rm -rf nzb* \
     && cd /usr/lib/ \
     && cp libxml2.so.2 libstdc++.so.6 libgcc_s.so.1 /tmp/ \
     && apk del .fetch-deps \
